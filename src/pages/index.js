@@ -2,12 +2,12 @@
 // import Image from 'next/image'
 // import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-import FeedbackForm from './qcomps/thankYouCrash.js'
+import Profile from './qcomps/profile_mistake.js'
 
 export default function Home() {
   return (
     <div className={styles.main}>
-        <FeedbackForm />
+        <Profile />
     </div>
   )
 }
