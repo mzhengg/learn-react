@@ -8,7 +8,10 @@ export default function Scoreboard() {
   });
 
   function handlePlusClick() {
-    player.score++;
+    setPlayer((prevPlayer) => ({
+      ...prevPlayer,
+      score: prevPlayer.score + 1,
+    }));
   }
 
   function handleFirstNameChange(e) {
@@ -20,18 +23,16 @@ export default function Scoreboard() {
 
   function handleLastNameChange(e) {
     setPlayer({
-      lastName: e.target.value
+      ...player,
+      lastName: e.target.value,
     });
   }
 
   return (
     <>
       <label>
-        Score: <b>{player.score}</b>
-        {' '}
-        <button onClick={handlePlusClick}>
-          +1
-        </button>
+        Score: <b>{player.score}</b>{' '}
+        <button onClick={handlePlusClick}>+1</button>
       </label>
       <label>
         First name:
